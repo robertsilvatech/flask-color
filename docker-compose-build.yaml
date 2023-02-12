@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  web-color-1:
+    #image: dev-flask-color
+    build:
+      context: .
+    container_name: color1
+    ports:
+      - "8000:8000"
+    environment:
+      - COLOR=BLUE
+    networks:
+      - compose-lab
+
+networks:
+  compose-lab:
+    driver: bridge
+
