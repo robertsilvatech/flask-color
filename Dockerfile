@@ -14,5 +14,7 @@ COPY setup.py /
 
 EXPOSE 5000
 
+VOLUME /data
+
 WORKDIR /
 CMD gunicorn -c setup.py run:app
