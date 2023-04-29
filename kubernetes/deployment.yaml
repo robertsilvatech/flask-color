@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flask-color
+  name: flask-color
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-color
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: flask-color
+    spec:
+      containers:
+      - image: robertsilvatech/flask-color
+        name: flask-color
